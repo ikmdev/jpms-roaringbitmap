@@ -8,15 +8,6 @@ on:
         type: string
         description: "(Optional) Custom Release Version"
         required: false
-      # version_type:
-      #   description: 'Development version type to increment'
-      #   required: true
-      #   default: 'minor'
-      #   type: choice
-      #   options:
-      #     - major
-      #     - minor
-      #     - patch
 
 env:
   BRANCH_NAME: ${{ github.ref_name }}
