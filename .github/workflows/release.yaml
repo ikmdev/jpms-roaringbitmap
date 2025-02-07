@@ -27,6 +27,20 @@ jobs:
         with:
           token: ${{secrets.IKMDEVOPS_PAT_TOKEN}}
 
+      - name: Verify Version
+        run: |
+          CURRENT_VERSION=$(./mvnw help:evaluate -D'expression=project.version' -q -D'forceStdout')
+          CORE_VERSION=$(./mvnw help:evaluate -D'expression=roaringbitmap.version' -q -D'forceStdout')
+          RELEASE_CANDIDATE_VERSION=$(./mvnw help:evaluate -D'expression=roaringbitmap.release' -q -D'forceStdout')
+          if [[ $CURRENT_VERSION == *"$CORE_VERSION"*]] && [[ $CURRENT_VERSION == *"RELEASE_CANDIDATE_VERSION"*]]; then
+             echo "::error::Current Version Does Not Match Core Version or Release Candidate Version"
+             echo "::error::Current Version: $CURRENT_VERSION"
+             echo "::error::Core Version: $CORE_VERSION"
+             echo "::error::Release Version: RELEASE_CANDIDATE_VERSION"
+             exit 1
+          fi
+
+
       - name: Shared Release Action
         uses: ikmdev/maven-semver-release-action@v2
         with:

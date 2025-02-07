@@ -176,7 +176,7 @@
                         <configuration>
                             <target>
                                 <echo message="renaming javadoc file" />
-                                <copy file="${project.build.directory}/dependency/RoaringBitmap-${roaringbitmap.version}-javadoc.jar"
+                                <copy file="${project.build.directory}/dependency/RoaringBitmap-${project.version}-javadoc.jar"
                                       tofile="${project.build.directory}/roaringbitmap-${roaringbitmap.version}-${roaringbitmap.release}-javadoc.jar" />
                             </target>
                         </configuration>
