@@ -40,6 +40,9 @@ jobs:
              exit 1
           fi
 
+      - name: Fail Anyway
+        run: exit 1
+
 
       - name: Shared Release Action
         uses: ikmdev/maven-semver-release-action@v2
