@@ -85,7 +85,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <roaringbitmap.release>r8</roaringbitmap.release>
-    <roaringbitmap.version>0.9.31</roaringbitmap.version>
+    <roaringbitmap.version>1.9.31</roaringbitmap.version>
     <semver-enforcer-rule.version>0.9.33</semver-enforcer-rule.version>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     <sonar.organization>ikmdev</sonar.organization>
@@ -308,13 +308,13 @@
                 <artifactItem>
                   <groupId>org.roaringbitmap</groupId>
                   <artifactId>RoaringBitmap</artifactId>
-                  <version>0.9.31</version>
+                  <version>1.9.31</version>
                   <classifier>sources</classifier>
                 </artifactItem>
                 <artifactItem>
                   <groupId>org.roaringbitmap</groupId>
                   <artifactId>RoaringBitmap</artifactId>
-                  <version>0.9.31</version>
+                  <version>1.9.31</version>
                   <classifier>javadoc</classifier>
                 </artifactItem>
               </artifactItems>
@@ -336,12 +336,12 @@
             <configuration>
               <artifacts>
                 <artifact>
-                  <file>c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-roaringbitmap\target/dependency/RoaringBitmap-0.9.31-sources.jar</file>
+                  <file>c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-roaringbitmap\target/dependency/RoaringBitmap-1.9.31-sources.jar</file>
                   <type>jar</type>
                   <classifier>sources</classifier>
                 </artifact>
                 <artifact>
-                  <file>c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-roaringbitmap\target/dependency/RoaringBitmap-0.9.31-javadoc.jar</file>
+                  <file>c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-roaringbitmap\target/dependency/RoaringBitmap-1.9.31-javadoc.jar</file>
                   <type>jar</type>
                   <classifier>javadoc</classifier>
                 </artifact>
@@ -369,7 +369,7 @@
                   <artifact>
                     <groupId>org.roaringbitmap</groupId>
                     <artifactId>RoaringBitmap</artifactId>
-                    <version>0.9.31</version>
+                    <version>1.9.31</version>
                   </artifact>
                   <moduleInfoSource>module dev.ikm.jpms.roaringbitmap {
                                             exports org.roaringbitmap;
@@ -397,7 +397,7 @@
             <configuration>
               <target>
                 <echo message="renaming sources file" />
-                <copy file="c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-roaringbitmap\target/dependency/RoaringBitmap-0.9.31-sources.jar" tofile="c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-roaringbitmap\target/roaringbitmap-0.9.31-r8-sources.jar" />
+                <copy file="c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-roaringbitmap\target/dependency/RoaringBitmap-1.9.31-sources.jar" tofile="c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-roaringbitmap\target/roaringbitmap-1.9.31-r8-sources.jar" />
               </target>
             </configuration>
           </execution>
@@ -410,7 +410,7 @@
             <configuration>
               <target>
                 <echo message="renaming javadoc file" />
-                <copy file="c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-roaringbitmap\target/dependency/RoaringBitmap-0.9.31-r12-SNAPSHOT-javadoc.jar" tofile="c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-roaringbitmap\target/roaringbitmap-0.9.31-r8-javadoc.jar" />
+                <copy file="c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-roaringbitmap\target/dependency/RoaringBitmap-0.9.31-r12-SNAPSHOT-javadoc.jar" tofile="c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-roaringbitmap\target/roaringbitmap-1.9.31-r8-javadoc.jar" />
               </target>
             </configuration>
           </execution>
@@ -422,7 +422,7 @@
             <configuration>
               <target>
                 <echo message="unzipping file" />
-                <unzip src="c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-roaringbitmap\target/moditect/RoaringBitmap-0.9.31.jar" dest="c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-roaringbitmap\target/classes/" />
+                <unzip src="c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-roaringbitmap\target/moditect/RoaringBitmap-1.9.31.jar" dest="c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-roaringbitmap\target/classes/" />
               </target>
             </configuration>
           </execution>

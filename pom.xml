@@ -17,7 +17,7 @@
 
     <properties>
         <!-- change release here-->
-        <roaringbitmap.version>0.9.31</roaringbitmap.version>
+        <roaringbitmap.version>1.9.31</roaringbitmap.version>
         <roaringbitmap.release>r8</roaringbitmap.release>
 
         <maven-assembly-plugin.version>3.3.0</maven-assembly-plugin.version>
