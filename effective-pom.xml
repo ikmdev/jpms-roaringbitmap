@@ -16,7 +16,7 @@
   <parent>
     <groupId>dev.ikm.build</groupId>
     <artifactId>parent</artifactId>
-    <version>1.55.0</version>
+    <version>1.57.0</version>
     <relativePath />
   </parent>
   <groupId>dev.ikm.jpms</groupId>
@@ -55,32 +55,32 @@
     <url>https://github.com/ikmdev/build-parent/issues</url>
   </issueManagement>
   <properties>
-    <build-helper-maven-plugin.version>3.4.0</build-helper-maven-plugin.version>
+    <build-helper-maven-plugin.version>3.6.0</build-helper-maven-plugin.version>
     <maven-assembly-plugin.version>3.3.0</maven-assembly-plugin.version>
-    <maven-javadoc-plugin.version>3.5.0</maven-javadoc-plugin.version>
+    <maven-javadoc-plugin.version>3.11.2</maven-javadoc-plugin.version>
     <maven-license-plugin.version>4.1</maven-license-plugin.version>
-    <maven-mojo-license-plugin.version>2.2.0</maven-mojo-license-plugin.version>
-    <maven-source-plugin.version>3.3.0</maven-source-plugin.version>
+    <maven-mojo-license-plugin.version>2.5.0</maven-mojo-license-plugin.version>
+    <maven-source-plugin.version>3.3.1</maven-source-plugin.version>
     <maven.antrun.plugin>3.1.0</maven.antrun.plugin>
     <maven.assembly-plugin.version>3.7.1</maven.assembly-plugin.version>
     <maven.assembly.version>3.7.1</maven.assembly.version>
     <maven.changes-plugin.version>2.12.1</maven.changes-plugin.version>
-    <maven.clean-plugin.version>3.1.0</maven.clean-plugin.version>
-    <maven.dependency-plugin.version>3.6.0</maven.dependency-plugin.version>
-    <maven.deploy-plugin.version>3.1.1</maven.deploy-plugin.version>
+    <maven.clean-plugin.version>3.4.0</maven.clean-plugin.version>
+    <maven.dependency-plugin.version>3.8.1</maven.dependency-plugin.version>
+    <maven.deploy-plugin.version>3.1.3</maven.deploy-plugin.version>
     <maven.directory.plugin>1.0</maven.directory.plugin>
-    <maven.enforcer-plugin.version>3.3.0</maven.enforcer-plugin.version>
+    <maven.enforcer-plugin.version>3.5.0</maven.enforcer-plugin.version>
     <maven.github-flow.version>1.21.1-r4</maven.github-flow.version>
-    <maven.gpg-plugin.version>3.1.0</maven.gpg-plugin.version>
-    <maven.install-plugin.version>3.1.1</maven.install-plugin.version>
+    <maven.gpg-plugin.version>3.2.7</maven.gpg-plugin.version>
+    <maven.install-plugin.version>3.1.3</maven.install-plugin.version>
     <maven.moditect.plugin>1.2.2.Final</maven.moditect.plugin>
-    <maven.plugin-plugin.version>3.6.1</maven.plugin-plugin.version>
-    <maven.project-info-reports-plugin.version>3.4.5</maven.project-info-reports-plugin.version>
-    <maven.site.plugin>3.9.1</maven.site.plugin>
-    <maven.sonarqube.version>3.9.1.2184</maven.sonarqube.version>
-    <maven.versions.plugin>2.15.0</maven.versions.plugin>
-    <maven.wrapper-plugin.version>3.2.0</maven.wrapper-plugin.version>
-    <nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
+    <maven.plugin-plugin.version>3.15.1</maven.plugin-plugin.version>
+    <maven.project-info-reports-plugin.version>3.8.0</maven.project-info-reports-plugin.version>
+    <maven.site.plugin>3.21.0</maven.site.plugin>
+    <maven.sonarqube.version>5.0.0.4389</maven.sonarqube.version>
+    <maven.versions.plugin>2.18.0</maven.versions.plugin>
+    <maven.wrapper-plugin.version>3.3.2</maven.wrapper-plugin.version>
+    <nexus-staging-maven-plugin.version>1.7.0</nexus-staging-maven-plugin.version>
     <project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -138,17 +138,48 @@
       <plugins>
         <plugin>
           <artifactId>maven-enforcer-plugin</artifactId>
-          <version>3.3.0</version>
+          <version>3.5.0</version>
+          <executions>
+            <execution>
+              <id>enforce-maven</id>
+              <goals>
+                <goal>enforce</goal>
+              </goals>
+              <configuration>
+                <rules>
+                  <requireMavenVersion>
+                    <version>(3.9,)</version>
+                  </requireMavenVersion>
+                </rules>
+              </configuration>
+            </execution>
+          </executions>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>versions-maven-plugin</artifactId>
-          <version>2.15.0</version>
+          <version>2.18.0</version>
+          <configuration>
+            <ruleSet>
+              <ignoreVersion>
+                <type>regex</type>
+                <version>.+-(alpha|beta).+</version>
+              </ignoreVersion>
+              <ignoreVersion>
+                <type>regex</type>
+                <version>.+-M.+</version>
+              </ignoreVersion>
+              <ignoreVersion>
+                <type>regex</type>
+                <version>(.+-SNAPSHOT|.+-M\d)</version>
+              </ignoreVersion>
+            </ruleSet>
+          </configuration>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>license-maven-plugin</artifactId>
-          <version>2.2.0</version>
+          <version>2.5.0</version>
         </plugin>
         <plugin>
           <artifactId>maven-changes-plugin</artifactId>
@@ -156,12 +187,12 @@
         </plugin>
         <plugin>
           <artifactId>maven-project-info-reports-plugin</artifactId>
-          <version>3.4.5</version>
+          <version>3.8.0</version>
         </plugin>
         <plugin>
           <groupId>org.sonarsource.scanner.maven</groupId>
           <artifactId>sonar-maven-plugin</artifactId>
-          <version>3.9.1.2184</version>
+          <version>5.0.0.4389</version>
         </plugin>
         <plugin>
           <groupId>dev.ikm</groupId>
@@ -191,16 +222,16 @@
         <plugin>
           <groupId>org.sonatype.plugins</groupId>
           <artifactId>nexus-staging-maven-plugin</artifactId>
-          <version>1.6.13</version>
+          <version>1.7.0</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>build-helper-maven-plugin</artifactId>
-          <version>3.4.0</version>
+          <version>3.6.0</version>
         </plugin>
         <plugin>
           <artifactId>maven-javadoc-plugin</artifactId>
-          <version>3.5.0</version>
+          <version>3.11.2</version>
         </plugin>
         <plugin>
           <artifactId>maven-antrun-plugin</artifactId>
@@ -212,32 +243,32 @@
         </plugin>
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
-          <version>3.1.0</version>
+          <version>3.4.0</version>
         </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
-          <version>3.1.1</version>
+          <version>3.1.3</version>
         </plugin>
         <plugin>
           <artifactId>maven-deploy-plugin</artifactId>
-          <version>3.1.1</version>
+          <version>3.1.3</version>
         </plugin>
         <plugin>
           <artifactId>maven-source-plugin</artifactId>
-          <version>3.3.0</version>
+          <version>3.3.1</version>
         </plugin>
         <plugin>
           <artifactId>maven-plugin-plugin</artifactId>
-          <version>3.6.1</version>
+          <version>3.15.1</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.wrapper</groupId>
           <artifactId>maven-wrapper</artifactId>
-          <version>3.2.0</version>
+          <version>3.3.2</version>
         </plugin>
         <plugin>
           <artifactId>maven-gpg-plugin</artifactId>
-          <version>3.1.0</version>
+          <version>3.2.7</version>
         </plugin>
         <plugin>
           <groupId>org.commonjava.maven.plugins</groupId>
@@ -246,7 +277,7 @@
         </plugin>
         <plugin>
           <artifactId>maven-dependency-plugin</artifactId>
-          <version>3.6.0</version>
+          <version>3.8.1</version>
         </plugin>
         <plugin>
           <artifactId>maven-release-plugin</artifactId>
@@ -263,7 +294,7 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>license-maven-plugin</artifactId>
-        <version>2.2.0</version>
+        <version>2.5.0</version>
         <configuration>
           <licenseName>apache_v2</licenseName>
         </configuration>
@@ -295,7 +326,7 @@
       </plugin>
       <plugin>
         <artifactId>maven-dependency-plugin</artifactId>
-        <version>3.6.0</version>
+        <version>3.8.1</version>
         <executions>
           <execution>
             <id>sources</id>
@@ -325,7 +356,7 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>build-helper-maven-plugin</artifactId>
-        <version>3.4.0</version>
+        <version>3.6.0</version>
         <executions>
           <execution>
             <id>attach-artifacts</id>
@@ -430,7 +461,7 @@
       </plugin>
       <plugin>
         <artifactId>maven-clean-plugin</artifactId>
-        <version>3.1.0</version>
+        <version>3.4.0</version>
         <executions>
           <execution>
             <id>default-clean</id>
@@ -509,7 +540,7 @@
       </plugin>
       <plugin>
         <artifactId>maven-install-plugin</artifactId>
-        <version>3.1.1</version>
+        <version>3.1.3</version>
         <executions>
           <execution>
             <id>default-install</id>
@@ -522,7 +553,7 @@
       </plugin>
       <plugin>
         <artifactId>maven-deploy-plugin</artifactId>
-        <version>3.1.1</version>
+        <version>3.1.3</version>
         <executions>
           <execution>
             <id>default-deploy</id>
