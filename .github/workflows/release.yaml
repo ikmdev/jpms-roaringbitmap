@@ -31,7 +31,7 @@ jobs:
         run: |
           CURRENT_VERSION=$(./mvnw help:evaluate -D'expression=project.version' -q -D'forceStdout')
           CORE_VERSION=$(./mvnw help:evaluate -D'expression=roaringbitmap.version' -q -D'forceStdout')
-          if [[ "$CURRENT_VERSION" == *"$CORE_VERSION"* ]]; then
+          if [[ "$CURRENT_VERSION" != *"$CORE_VERSION"* ]]; then
              echo "::error::Current Version Does Not Match Core Version"
              echo "::error::Current Version: $CURRENT_VERSION"
              echo "::error::Core Version: $CORE_VERSION"
