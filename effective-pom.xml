@@ -397,7 +397,7 @@
             <configuration>
               <target>
                 <echo message="renaming sources file" />
-                <copy file="c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-roaringbitmap\target/dependency/RoaringBitmap-0.9.31-sources.jar" tofile="c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-roaringbitmap\target/roaringbitmap-0.9.31-r8-sources.jar" />
+                <copy file="c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-roaringbitmap\target/dependency/RoaringBitmap-0.9.31-sources.jar" tofile="c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-roaringbitmap\target/roaringbitmap-0.9.31-r12-SNAPSHOT-sources.jar" />
               </target>
             </configuration>
           </execution>
@@ -410,7 +410,7 @@
             <configuration>
               <target>
                 <echo message="renaming javadoc file" />
-                <copy file="c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-roaringbitmap\target/dependency/RoaringBitmap-0.9.31-r12-SNAPSHOT-javadoc.jar" tofile="c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-roaringbitmap\target/roaringbitmap-0.9.31-r8-javadoc.jar" />
+                <copy file="c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-roaringbitmap\target/dependency/RoaringBitmap-0.9.31-javadoc.jar" tofile="c:\Users\omomofonmwan\FDAShieldCode\GitHub\ikmdev\jpms-repos\jpms-roaringbitmap\target/roaringbitmap-0.9.31-r12-SNAPSHOT-javadoc.jar" />
               </target>
             </configuration>
           </execution>

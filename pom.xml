@@ -163,7 +163,7 @@
                             <target>
                                 <echo message="renaming sources file" />
                                 <copy file="${project.build.directory}/dependency/RoaringBitmap-${roaringbitmap.version}-sources.jar"
-                                      tofile="${project.build.directory}/roaringbitmap-${roaringbitmap.version}-${roaringbitmap.release}-sources.jar" />
+                                      tofile="${project.build.directory}/roaringbitmap-${project.version}-sources.jar" />
                             </target>
                         </configuration>
                     </execution>
@@ -176,8 +176,8 @@
                         <configuration>
                             <target>
                                 <echo message="renaming javadoc file" />
-                                <copy file="${project.build.directory}/dependency/RoaringBitmap-${project.version}-javadoc.jar"
-                                      tofile="${project.build.directory}/roaringbitmap-${roaringbitmap.version}-${roaringbitmap.release}-javadoc.jar" />
+                                <copy file="${project.build.directory}/dependency/RoaringBitmap-${roaringbitmap.version}-javadoc.jar"
+                                      tofile="${project.build.directory}/roaringbitmap-${project.version}-javadoc.jar" />
                             </target>
                         </configuration>
                     </execution>
