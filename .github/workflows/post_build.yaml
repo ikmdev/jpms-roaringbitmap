@@ -39,4 +39,3 @@ jobs:
             sonarcloud_token: ${{ secrets.SONAR_TOKEN }}
             sonarcloud_sources: ${{ '' }}
             sonarcloud_tests: ${{ '' }}
-
