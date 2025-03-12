@@ -13,7 +13,7 @@
     <artifactId>roaringbitmap</artifactId>
     <packaging>jar</packaging>
     <name>Roaring</name>
-    <version>0.9.31-r12-AR-299_Java23-SNAPSHOT</version>
+    <version>0.9.31-r12-SNAPSHOT</version>
 
     <properties>
         <!-- change release here-->
